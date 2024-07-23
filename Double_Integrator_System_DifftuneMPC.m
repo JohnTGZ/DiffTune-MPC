@@ -52,7 +52,7 @@ vel_des = @(t) 1*ones(size(t)) + 1*sin(t);
 % Parameters for DiffTune
 learningRate = 0.01; 
 minCoef = 0.01; % the minimial diagonal elements of Q and R cannot be smaller than this value
-maxCoef = 100; % the minimial diagonal elements of Q and R cannot be bigger than this value
+maxCoef = 10; % the minimial diagonal elements of Q and R cannot be bigger than this value
 loss_hist = [];
 param_hist = [diag(W)];
 RMSE_hist = [];
@@ -60,7 +60,7 @@ RMSE_hist = [];
 % initialize the gradient
 theta_gradient = zeros(1,nx+nu);
 theta_gradient_hist = theta_gradient;
-total_itr = 20;
+total_itr = 100;
 difftune_itr = 0;
 
 %% DiffTune main loop
